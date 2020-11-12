@@ -27,7 +27,6 @@ function bootstrap(query) {
   });
 
   const redircet = generateAuthRedirect(params);
-  alert(redircet);
   // redirct地址
   if (redircet) window.location.href = redircet;
 }
