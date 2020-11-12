@@ -15,7 +15,7 @@ function generateAuthRedirect(params) {
     redirect_uri: `http://${params.app}.dev.xbt-dev.top`,
     response_type: RESPONSE_TYPE,
     scope: SCOPE,
-    state: params.app,
+    state: "auth",
   });
 
   return `${AUTH_URL}?${query}#wechat_redirect`;
