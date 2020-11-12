@@ -15,7 +15,7 @@ function generateAuthRedirect(params) {
     redirect_uri: `http://${params.app}.dev.xbt-dev.top`,
     response_type: RESPONSE_TYPE,
     scope: SCOPE,
-    state: "auth",
+    state: params.app,
   });
 
   return `${AUTH_URL}?${query}#wechat_redirect`;
@@ -27,6 +27,7 @@ function bootstrap(query) {
   });
 
   const redircet = generateAuthRedirect(params);
+  alert(redircet);
   // redirct地址
   if (redircet) window.location.href = redircet;
 }
